@@ -2,7 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const _ = require("lodash"); 
-//const date = require(__dirname +'/date.js');
 const app = express();
 app.set('view engine', 'ejs');
 mongoose.set('strictQuery', true);
