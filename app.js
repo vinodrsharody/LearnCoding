@@ -10,7 +10,7 @@ app.use(express.static("public"));
 
 
 const port = 3000;
-mongoose.connect('mongodb+srv://vinodatlas:vinodatlas123@cluster0.sdem1tf.mongodb.net/listItemDB');
+mongoose.connect('');
 
 const itemSchema = {
   name:String
