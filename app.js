@@ -17,7 +17,7 @@ let port = process.env.PORT;
 if(port == null ||port == "" ) {
   port = 3000;
 }
-mongoose.connect(server + user +":"+ cred + "@cluster0.sdem1tf.mongodb.net/listItemDB");
+mongoose.connect(server + user +":"+ cred + "@cluster0.sdem1tf.mongodb.net/?retryWrites=true&w=majority/listItemDB");
 
 const itemSchema = {
   name:String
