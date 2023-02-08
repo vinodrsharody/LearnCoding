@@ -1,16 +1,23 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+require('dotenv').config();
 const _ = require("lodash"); 
 const app = express();
 app.set('view engine', 'ejs');
 mongoose.set('strictQuery', true);
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
+const server = process.env.DB_HOST;
+const user = process.env.DB_USER; 
+const cred = process.env.DB_PASSWORD;
 
 
-const port = 3000;
-mongoose.connect('');
+let port = process.env.PORT;
+if(port == null ||port == "" ) {
+  port = 3000;
+}
+mongoose.connect(server + user +":"+ cred + "@cluster0.sdem1tf.mongodb.net/listItemDB");
 
 const itemSchema = {
   name:String
